@@ -4,15 +4,21 @@ require "chpter/configuration"
 module Chpter
   class Error < StandardError; end
 
-  def self.configuration
-    @configuration ||= Configuration.new
-  end
+  autoload :Configuration, "chpter/configuration"
+  autoload :Client, "chpter/client"
+  autoload :Resource, "chpter/resource"
+  autoload :Object, "chpter/object"
 
-  def self.reset
-    @configuration = Configuration.new
-  end
+  # Autoload resources
+  autoload :MpesaResource, "chpter/resources/payments/mpesa_resource"
 
-  def self.configure
-    yield(configuration)
+  class << self
+    def configuration
+      @configuration ||= Configuration.new
+    end
+
+    def configure
+      yield(configuration)
+    end
   end
 end
