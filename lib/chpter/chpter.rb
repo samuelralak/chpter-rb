@@ -14,6 +14,10 @@ module Chpter
   autoload :CheckoutResource, "chpter/resources/checkout"
 
   class << self
+    def client
+      Client.new(config: configuration)
+    end
+
     def configuration
       @configuration ||= Configuration.new
     end

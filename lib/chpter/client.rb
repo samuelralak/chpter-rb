@@ -4,8 +4,9 @@ module Chpter
   class Client
     attr_reader :adapter
 
-    def initialize(adapter: Faraday.default_adapter)
+    def initialize(config:, adapter: Faraday.default_adapter)
       @adapter = adapter
+      @config = config
     end
 
     def config
