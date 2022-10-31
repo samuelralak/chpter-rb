@@ -11,6 +11,7 @@ module Chpter
 
   # Autoload resources
   autoload :MpesaResource, "chpter/resources/payments/mpesa_resource"
+  autoload :CheckoutResource, "chpter/resources/checkout"
 
   class << self
     def configuration

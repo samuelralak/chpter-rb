@@ -21,8 +21,13 @@ module Chpter
       end
     end
 
+    # TODO: Can be refactored with metaprogramming
     def mpesa
       MpesaResource.new(self)
+    end
+
+    def checkout
+      CheckoutResource.new(self)
     end
 
     def inspect

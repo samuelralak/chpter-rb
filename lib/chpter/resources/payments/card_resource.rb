@@ -1,3 +1,4 @@
+# TODO: Move to payment resource class
 module Chpter
   class CardResource < Resource
     def initiate(customer_details: {}, products: [], amount: {}, card_details: {}, callback_details: {})
